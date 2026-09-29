@@ -1,0 +1,26 @@
+# Git metadata
+.git/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and local environment files
+*.log
+.env
+.env.*
+!.env.example
+
+# Common build and cache output
+dist/
+build/
+coverage/
+.cache/
+node_modules/

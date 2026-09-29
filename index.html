@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101312" />
+    <meta
+      name="description"
+      content="SubDebt Manager is a private, offline-first personal finance manager for subscriptions, ledgers, and daily spending."
+    />
+    <title>SubDebt Manager | Private money, kept local</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="brand" href="#top" aria-label="SubDebt Manager home"
+        ><span class="brand-mark" aria-hidden="true"
+          ><img src="icon.png" alt="" /></span
+        ><span>SubDebt</span></a
+      >
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#features">Features</a><a href="#release">What's new</a
+        ><a class="nav-cta" href="#download">Get the app</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <div class="eyebrow">
+              <span></span> Personal finance, kept private
+            </div>
+            <h1>Your money.<br /><em>Your device.</em><br />Your rules.</h1>
+            <p class="hero-copy">
+              SubDebt is an offline-first finance manager for recurring
+              subscriptions, personal debt, credit ledgers, and everyday
+              spending.
+            </p>
+            <div class="actions" id="download">
+              <a
+                class="button button-primary download-button"
+                href="https://github.com/zer0k7/SubDebt-Manager/releases/download/v2.11.1/SubDebt-arm64-v8a.apk"
+                data-download
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" /></svg
+                ><span>Download for Android</span></a
+              ><a
+                class="button button-secondary"
+                href="https://github.com/zer0k7/SubDebt-Manager"
+                target="_blank"
+                rel="noreferrer"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  /></svg
+                >Source on GitHub</a
+              >
+            </div>
+            <div class="download-note" data-download-status aria-live="polite">
+              v2.11.1 · Android ARM64 · 100% offline
+            </div>
+          </div>
+          <div class="device" aria-label="SubDebt dashboard preview">
+            <div class="device-screen">
+              <div class="screen-top">
+                <span>SUBDEBT / TODAY</span><span>09:41</span>
+              </div>
+              <div class="screen-title">Good morning, Salik.</div>
+              <div class="money-card">
+                <small>NET CASHFLOW THIS MONTH</small
+                ><span class="money">₹ 24,860</span>
+                <div class="money-meta">
+                  <span>+ 18.4% saved</span><span>On track</span>
+                </div>
+              </div>
+              <div class="screen-label">Upcoming <span>View all</span></div>
+              <div class="screen-list">
+                <div class="screen-row">
+                  <div>
+                    <span class="dot"></span>Netflix<small
+                      >Renews in 3 days</small
+                    >
+                  </div>
+                  <strong>− ₹ 649</strong>
+                </div>
+                <div class="screen-row">
+                  <div>
+                    <span class="dot green"></span>Arjun · borrowed<small
+                      >Due on 28 Sep</small
+                    >
+                  </div>
+                  <strong>+ ₹ 2,000</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="strip" aria-label="Product facts">
+        <div class="shell strip-inner">
+          <div class="stat">
+            <strong>0</strong><span>accounts required</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong><span>local data persistence</span>
+          </div>
+          <div class="stat">
+            <strong>v2.11.1</strong><span>latest stable release</span>
+          </div>
+        </div>
+      </section>
+      <section class="section shell" id="features">
+        <div class="section-heading">
+          <h2>Everything you need to see where money goes.</h2>
+          <p class="section-intro">
+            A focused toolkit for the small financial decisions that add up. No
+            noise, no cloud dashboard, no hidden audience.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="5" width="18" height="15" rx="2" />
+                <path d="M8 3v4m8-4v4M3 10h18" />
+              </svg>
+            </div>
+            <h3>Subscriptions</h3>
+            <p>
+              Track weekly to yearly billing cycles, renewal dates, monthly burn
+              rate, and on-device reminders.
+            </p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2v20M17 6.5c0-1.7-2-3-5-3s-5 1.3-5 3 2 3 5 3 5 1.3 5 3-2 3-5 3-5-1.3-5-3"
+                />
+              </svg>
+            </div>
+            <h3>Debt ledger</h3>
+            <p>
+              Keep borrowed liabilities and lent assets separate. Record partial
+              settlements and see the balance change.
+            </p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 19V5m0 14h16M8 16v-3m4 3V8m4 8v-6" />
+              </svg>
+            </div>
+            <h3>Daily spending</h3>
+            <p>
+              Organize expenses by category, set monthly thresholds, and spot
+              your rhythm with a 30-day heatmap.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="shell privacy">
+        <div>
+          <div class="eyebrow" style="color: var(--ink)">
+            <span style="background: var(--ink)"></span> Built differently
+          </div>
+          <h2>Private by default.</h2>
+        </div>
+        <div>
+          <p class="privacy-copy">
+            Your financial records belong on your device. SubDebt works without
+            an account, remote server, analytics, or telemetry.
+          </p>
+          <ul class="privacy-list">
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path d="m5 12 4 4L19 6" /></svg
+              >Offline persistence
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path d="m5 12 4 4L19 6" /></svg
+              >Biometric lock
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path d="m5 12 4 4L19 6" /></svg
+              >JSON backup &amp; restore
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path d="m5 12 4 4L19 6" /></svg
+              >CSV data export
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section shell" id="release">
+        <div class="release">
+          <div class="release-meta">
+            <strong>Version 2.11.1</strong>Latest release<br />Android ARM64<br />TypeScript
+            verified
+          </div>
+          <div>
+            <h2>More breathing room. Smarter signals.</h2>
+            <ul class="release-list">
+              <li>
+                <b>01</b
+                ><span
+                  ><strong>Refined dashboard</strong><br />Restored spacing,
+                  comfortable margins, and a unified cashflow and runway
+                  card.</span
+                >
+              </li>
+              <li>
+                <b>02</b
+                ><span
+                  ><strong>Safer category editing</strong><br />Save forms now
+                  respect Android navigation insets with a comfortable touch
+                  target.</span
+                >
+              </li>
+              <li>
+                <b>03</b
+                ><span
+                  ><strong>Sharper price-hike alerts</strong><br />Strict
+                  matching removes false positives, with a one-tap dismiss
+                  action.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="shell footer-inner">
+        <span>SubDebt Manager · Open source, offline first.</span>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a
+            href="https://github.com/zer0k7/SubDebt-Manager/releases/tag/v2.11.1"
+            target="_blank"
+            rel="noreferrer"
+            >Release notes</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
