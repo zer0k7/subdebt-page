@@ -19,9 +19,9 @@ SubDebt is designed to keep financial data on the device. The product does not r
 
 ## Latest Release
 
-- Version: `2.12.0`
-- Platform: Android ARM64
-- Download: [SubDebt-arm64-v8a.apk](https://github.com/zer0k7/SubDebt-Manager/releases/download/v2.12.0/SubDebt-arm64-v8a.apk)
-- Release notes: [v2.12.0](https://github.com/zer0k7/SubDebt-Manager/releases/tag/v2.12.0)
+- Version: `2.14.0`
+- Platform: Android ARM64 & AAB
+- Download: [SubDebt-arm64-v8a.apk](https://github.com/zer0k7/SubDebt-Manager/releases/download/v2.14.0/SubDebt-arm64-v8a.apk)
+- Release notes: [v2.14.0](https://github.com/zer0k7/SubDebt-Manager/releases/tag/v2.14.0)
 
-The release highlights a brand refresh with Google Play Store icon standards, a 1-tap "Cancel Subscription" direct assistant with formal cancellation letters, aesthetic financial snapshot cards ("Share My Stats") with built-in privacy masking and multi-theme sharing, and an interactive "What's New in v2.12" brand reveal modal.
+The release highlights an interactive feature discovery coach mark for seamless navigation guidance, refined UI iconography for financial clarity, the radial satellite action menu, and historical financial statement exports.
