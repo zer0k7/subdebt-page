@@ -19,9 +19,9 @@ SubDebt is designed to keep financial data on the device. The product does not r
 
 ## Latest Release
 
-- Version: `2.14.0`
+- Version: `2.14.1`
 - Platform: Android ARM64 & AAB
-- Download: [SubDebt-arm64-v8a.apk](https://github.com/zer0k7/SubDebt-Manager/releases/download/v2.14.0/SubDebt-arm64-v8a.apk)
-- Release notes: [v2.14.0](https://github.com/zer0k7/SubDebt-Manager/releases/tag/v2.14.0)
+- Download: [SubDebt-arm64-v8a.apk](https://github.com/zer0k7/SubDebt-Manager/releases/download/v2.14.1/SubDebt-arm64-v8a.apk)
+- Release notes: [v2.14.1](https://github.com/zer0k7/SubDebt-Manager/releases/tag/v2.14.1)
 
 The release highlights an interactive feature discovery coach mark for seamless navigation guidance, refined UI iconography for financial clarity, the radial satellite action menu, and historical financial statement exports.

@@ -21,7 +21,7 @@ downloadButton.addEventListener("click", async (event) => {
     link.click();
     link.remove();
     URL.revokeObjectURL(blobUrl);
-    status.textContent = "Download started · v2.14.0";
+    status.textContent = "Download started · v2.14.1";
   } catch (error) {
     status.textContent = "Starting direct download...";
     window.location.assign(downloadButton.href);
