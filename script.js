@@ -1,7 +1,7 @@
 /* SubDebt Manager — minimal site behaviour.
    Single source of truth for the release version shown on the page. */
 const APP = Object.freeze({
-  version: "2.18.0",
+  version: "2.17.0",
   packageName: "com.subdebt.app",
   playUrl: "https://play.google.com/store/apps/details?id=com.subdebt.app",
   releasesUrl: "https://github.com/zer0k7/SubDebt-Manager/releases/latest",

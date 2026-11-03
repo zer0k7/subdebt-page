@@ -51,7 +51,7 @@ The displayed app version comes from one constant in `script.js`:
 
 ```js
 const APP = Object.freeze({
-  version: "2.18.0",
+  version: "2.17.0",
   ...
 });
 ```
