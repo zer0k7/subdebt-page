@@ -1,0 +1,24 @@
+{
+  "name": "SubDebt Manager",
+  "short_name": "SubDebt",
+  "description": "Offline-first personal finance for Android. Subscriptions, debts, spending and bank ledgers on your device.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#090D16",
+  "theme_color": "#090D16",
+  "icons": [
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

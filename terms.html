@@ -3,139 +3,300 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#101312" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#090D16" />
+
+    <title>Terms of Service | SubDebt Manager</title>
     <meta
       name="description"
-      content="Terms of Service for SubDebt Manager. Guidelines, software license, and usage terms."
+      content="Terms of Service for SubDebt Manager. Guidelines, software license, disclaimers and usage terms for the offline finance app."
     />
-    <title>Terms of Service | SubDebt Manager</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="canonical" href="https://subdebt.zer0k7lab.tech/terms.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SubDebt Manager" />
+    <meta property="og:title" content="Terms of Service — SubDebt Manager" />
+    <meta
+      property="og:description"
+      content="Guidelines, software license, disclaimers and usage terms for SubDebt Manager."
+    />
+    <meta property="og:url" content="https://subdebt.zer0k7lab.tech/terms.html" />
+    <meta property="og:image" content="https://subdebt.zer0k7lab.tech/assets/img/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Terms of Service — SubDebt Manager" />
+    <meta
+      name="twitter:description"
+      content="Guidelines, software license, disclaimers and usage terms for SubDebt Manager."
+    />
+    <meta name="twitter:image" content="https://subdebt.zer0k7lab.tech/assets/img/og.png" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="assets/fonts/inter-tight-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <link rel="icon" type="image/png" href="icon.png" />
+    <link
+      rel="preload"
+      href="assets/fonts/jetbrains-mono-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/png" href="assets/img/favicon-64.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        try {
+          var saved = localStorage.getItem("subdebt-theme");
+          var theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          root.dataset.theme = theme;
+        } catch (error) {}
+      })();
+    </script>
   </head>
+
   <body>
-    <header class="shell topbar">
-      <a class="brand" href="index.html" aria-label="SubDebt Manager home">
-        <span class="brand-mark" aria-hidden="true">
-          <img src="icon.png" alt="SubDebt Logo" />
-        </span>
-        <span>SubDebt</span>
-      </a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="index.html#features">Features</a>
-        <a href="index.html#release">What's new</a>
-        <a href="support.html">Support</a>
-        <a class="nav-cta" href="index.html#download">Get the app</a>
-      </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="SubDebt Manager home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/img/mark-128.png" width="128" height="128" alt="" />
+          </span>
+          <span class="brand-name">SubDebt<span class="brand-suffix">/Manager</span></span>
+        </a>
+
+        <div class="header-actions">
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a class="nav-link" href="index.html#features">Features</a>
+            <a class="nav-link" href="index.html#privacy">Privacy</a>
+            <a class="nav-link" href="index.html#tools">Tools</a>
+            <a class="nav-link" href="index.html#faq">FAQ</a>
+            <a class="nav-link" href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a
+              class="btn btn--primary btn--sm nav-cta"
+              href="https://play.google.com/store/apps/details?id=com.subdebt.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="play-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#00D7FE" d="M3.4 2.1 13.1 11.8 3.4 21.5a1.4 1.4 0 0 1-.6-1.1V3.2c0-.4.2-.8.6-1.1Z" />
+                <path fill="#34D399" d="M3.4 2.1c.3-.2.7-.2 1.1 0l10.9 6.2-2.3 2.3-9.7-9.7Z" />
+                <path fill="#FB7185" d="M3.4 21.5c.3.2.7.2 1.1 0l10.9-6.2-2.3-2.3-9.7 9.7Z" />
+                <path fill="#FBBF24" d="m16.6 9.1 3.6 2.1c.8.5.8 1.1 0 1.6l-3.6 2.1-2.5-2.9 2.5-2.9Z" />
+              </svg>
+              Get it on Google Play
+            </a>
+          </nav>
+
+          <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.5" />
+              <path d="M12 2.5v2M12 19.5v2M4.7 4.7l1.4 1.4M17.9 17.9l1.4 1.4M2.5 12h2M19.5 12h2M4.7 19.3l1.4-1.4M17.9 6.1l1.4-1.4" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z" />
+            </svg>
+          </button>
+
+          <button
+            class="icon-btn menu-toggle"
+            type="button"
+            data-nav-toggle
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <section class="doc-shell doc-hero">
-        <div class="eyebrow"><span></span> Legal Terms</div>
-        <h1>Terms of Service</h1>
-        <p class="hero-copy">
-          Please review these Terms of Service before using the SubDebt Manager application or associated website.
-        </p>
-        <div class="doc-meta">
-          <span class="doc-badge">Effective Date: October 2, 2026</span>
-          <span>Version 2.14.1</span>
+    <main id="main">
+      <section class="legal-hero">
+        <div class="container">
+          <p class="kicker">Legal / Terms</p>
+          <h1>Terms of Service</h1>
+          <p class="hero-copy">
+            Please review these Terms of Service before using the SubDebt Manager application or associated website.
+          </p>
+          <div class="legal-meta">
+            <span class="doc-badge">Effective Date: October 2, 2026</span>
+            <span>Version 2.14.1</span>
+          </div>
         </div>
       </section>
 
-      <article class="doc-shell doc-body">
-        <section class="doc-section">
-          <h2>1. Acceptance of Terms</h2>
-          <p>
-            By downloading, installing, accessing, or using SubDebt Manager ("the Application"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not install or use the Application.
-          </p>
-        </section>
+      <div class="container legal-layout">
+        <aside class="legal-toc" aria-label="On this page">
+          <p>On this page</p>
+          <nav aria-label="Page sections">
+            <a href="#acceptance">1. Acceptance of terms</a>
+            <a href="#description">2. Description of the app</a>
+            <a href="#responsibility">3. Your responsibility</a>
+            <a href="#cancellation">4. Cancellation links</a>
+            <a href="#license">5. Open-source license</a>
+            <a href="#warranties">6. Disclaimer of warranties</a>
+            <a href="#liability">7. Limitation of liability</a>
+            <a href="#inquiries">8. Governing law</a>
+          </nav>
+        </aside>
 
-        <section class="doc-section">
-          <h2>2. Description of the Application</h2>
-          <p>
-            SubDebt Manager is an offline-first personal financial management utility designed to help individuals record recurring subscription payments, personal debts, credit ledgers, and day-to-day expenditures.
-          </p>
-          <div class="doc-card highlight">
+        <article class="legal-body">
+          <section id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
             <p>
-              <strong>Important Financial Disclaimer:</strong> SubDebt Manager is a self-directed organizational tool. It does NOT provide financial, tax, investment, accounting, or legal advice. The Application does not link directly to banking institutions or execute monetary wire transfers. You are solely responsible for verifying the accuracy of entries and managing your financial commitments.
+              By downloading, installing, accessing, or using SubDebt Manager ("the Application"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not install or use the Application.
             </p>
-          </div>
-        </section>
+          </section>
 
-        <section class="doc-section">
-          <h2>3. User Responsibility &amp; Local Backups</h2>
-          <p>
-            Because SubDebt Manager does not operate cloud servers or centralized backup mechanisms:
-          </p>
-          <ul>
-            <li>You are solely responsible for creating and safely storing regular backups of your financial records using the built-in JSON / CSV export features.</li>
-            <li>We are not liable for data loss arising from device damage, loss, theft, factory resets, operating system upgrades, or app uninstalls.</li>
-            <li>Enabling biometric lock (fingerprint / face unlock) is recommended to protect your records from unauthorized local physical access.</li>
-          </ul>
-        </section>
+          <section id="description">
+            <h2>2. Description of the Application</h2>
+            <p>
+              SubDebt Manager is an offline-first personal financial management utility designed to help individuals record recurring subscription payments, personal debts, credit ledgers, and day-to-day expenditures.
+            </p>
+            <div class="doc-card highlight">
+              <p>
+                <strong>Important Financial Disclaimer:</strong> SubDebt Manager is a self-directed organizational tool. It does NOT provide financial, tax, investment, accounting, or legal advice. The Application does not link directly to banking institutions or execute monetary wire transfers. You are solely responsible for verifying the accuracy of entries and managing your financial commitments.
+              </p>
+            </div>
+          </section>
 
-        <section class="doc-section">
-          <h2>4. Subscription Cancellation Links</h2>
-          <p>
-            The Application provides quick links and formal cancellation templates to help you manage third-party subscriptions (such as streaming platforms, software licenses, or memberships).
-          </p>
-          <ul>
-            <li>SubDebt Manager does not have the ability to automatically modify or cancel accounts with third-party service providers on your behalf.</li>
-            <li>Final confirmation of subscription termination rests between you and the respective third-party merchant.</li>
-          </ul>
-        </section>
+          <section id="responsibility">
+            <h2>3. User Responsibility &amp; Local Backups</h2>
+            <p>
+              Because SubDebt Manager does not operate cloud servers or centralized backup mechanisms:
+            </p>
+            <ul>
+              <li>You are solely responsible for creating and safely storing regular backups of your financial records using the built-in JSON / CSV export features.</li>
+              <li>We are not liable for data loss arising from device damage, loss, theft, factory resets, operating system upgrades, or app uninstalls.</li>
+              <li>Enabling biometric lock (fingerprint / face unlock) is recommended to protect your records from unauthorized local physical access.</li>
+            </ul>
+          </section>
 
-        <section class="doc-section">
-          <h2>5. Open Source Software License</h2>
-          <p>
-            SubDebt Manager is open-source software. You may inspect, modify, and distribute the code in accordance with the terms of the project's license hosted on our GitHub repository.
-          </p>
-        </section>
+          <section id="cancellation">
+            <h2>4. Subscription Cancellation Links</h2>
+            <p>
+              The Application provides quick links and formal cancellation templates to help you manage third-party subscriptions (such as streaming platforms, software licenses, or memberships).
+            </p>
+            <ul>
+              <li>SubDebt Manager does not have the ability to automatically modify or cancel accounts with third-party service providers on your behalf.</li>
+              <li>Final confirmation of subscription termination rests between you and the respective third-party merchant.</li>
+            </ul>
+          </section>
 
-        <section class="doc-section">
-          <h2>6. Disclaimer of Warranties</h2>
-          <p>
-            THE APPLICATION IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APPLICATION WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VULNERABILITIES.
-          </p>
-        </section>
+          <section id="license">
+            <h2>5. Open Source Software License</h2>
+            <p>
+              SubDebt Manager is open-source software. You may inspect, modify, and distribute the code in accordance with the terms of the project's license hosted on our GitHub repository.
+            </p>
+          </section>
 
-        <section class="doc-section">
-          <h2>7. Limitation of Liability</h2>
-          <p>
-            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE DEVELOPER OR CONTRIBUTORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION LOSS OF PROFITS, DATA, USE, OR GOODWILL, ARISING FROM YOUR USE OF OR INABILITY TO USE THE APPLICATION.
-          </p>
-        </section>
+          <section id="warranties">
+            <h2>6. Disclaimer of Warranties</h2>
+            <p>
+              THE APPLICATION IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APPLICATION WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VULNERABILITIES.
+            </p>
+          </section>
 
-        <section class="doc-section">
-          <h2>8. Governing Law &amp; Inquiries</h2>
-          <p>
-            These Terms are governed by and construed in accordance with applicable laws without regard to conflict of law principles. If you have questions regarding these terms, please contact:
-          </p>
-          <div class="doc-card">
-            <p><strong>Email:</strong> <a href="mailto:zer0k7lab@gmail.com" style="color: var(--lime);">zer0k7lab@gmail.com</a></p>
-            <p><strong>Website:</strong> <a href="https://subdebt.saliknaik.me" style="color: var(--lime);">subdebt.saliknaik.me</a></p>
-          </div>
-        </section>
-      </article>
+          <section id="liability">
+            <h2>7. Limitation of Liability</h2>
+            <p>
+              TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE DEVELOPER OR CONTRIBUTORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION LOSS OF PROFITS, DATA, USE, OR GOODWILL, ARISING FROM YOUR USE OF OR INABILITY TO USE THE APPLICATION.
+            </p>
+          </section>
+
+          <section id="inquiries">
+            <h2>8. Governing Law &amp; Inquiries</h2>
+            <p>
+              These Terms are governed by and construed in accordance with applicable laws without regard to conflict of law principles. If you have questions regarding these terms, please contact:
+            </p>
+            <div class="doc-card">
+              <p><strong>Email:</strong> <a href="mailto:zer0k7lab@gmail.com">zer0k7lab@gmail.com</a></p>
+              <p><strong>Website:</strong> <a href="https://subdebt.saliknaik.me">subdebt.saliknaik.me</a></p>
+            </div>
+          </section>
+        </article>
+      </div>
     </main>
 
-    <footer>
-      <div class="shell footer-inner">
-        <span>SubDebt Manager · Open source, offline first.</span>
-        <div class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="data-deletion.html">Data Deletion</a>
-          <a href="support.html">Support</a>
-          <a href="https://github.com/zer0k7/SubDebt-Manager/releases/tag/v2.14.1" target="_blank" rel="noreferrer">Release notes</a>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a class="brand" href="index.html" aria-label="SubDebt Manager home">
+              <span class="brand-mark" aria-hidden="true">
+                <img src="assets/img/mark-128.png" width="128" height="128" alt="" />
+              </span>
+              <span class="brand-name">SubDebt<span class="brand-suffix">/Manager</span></span>
+            </a>
+            <p>
+              Offline finance for Android. Subscriptions, debts, spending, banks
+              and backups in one private ledger.
+            </p>
+            <span class="footer-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              Made in Jammu &amp; Kashmir, India
+            </span>
+          </div>
+
+          <div class="footer-cols">
+            <div class="footer-col">
+              <h2>Product</h2>
+              <a href="index.html#features">Features</a>
+              <a href="index.html#privacy">Privacy model</a>
+              <a href="index.html#tools">Tools</a>
+              <a href="index.html#install">Install</a>
+            </div>
+            <div class="footer-col">
+              <h2>Resources</h2>
+              <a href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/zer0k7/SubDebt-Manager/releases/latest" target="_blank" rel="noopener noreferrer">Releases</a>
+              <a href="support.html">Support</a>
+              <a href="index.html#faq">FAQ</a>
+            </div>
+            <div class="footer-col">
+              <h2>Legal</h2>
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="data-deletion.html">Data deletion</a>
+              <a href="https://zer0k7lab.tech" target="_blank" rel="noopener noreferrer">Zer0k7 Lab</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span data-year>2026</span> Zer0k7 Lab. SubDebt Manager is MIT licensed.</p>
+          <p>
+            <a href="https://subdebt.zer0k7lab.tech">subdebt.zer0k7lab.tech</a>
+            <span aria-hidden="true">·</span>
+            <a href="index.html">Back to home ↑</a>
+          </p>
         </div>
       </div>
     </footer>
+
+    <script src="script.js" defer></script>
   </body>
 </html>

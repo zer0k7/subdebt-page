@@ -3,188 +3,349 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#101312" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#090D16" />
+
+    <title>Privacy Policy | SubDebt Manager</title>
     <meta
       name="description"
-      content="Privacy Policy for SubDebt Manager. Offline-first, private personal finance with zero remote data collection or telemetry."
+      content="Privacy Policy for SubDebt Manager. Offline-first, private personal finance with no account, no analytics and no remote data collection."
     />
-    <title>Privacy Policy | SubDebt Manager</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="canonical" href="https://subdebt.zer0k7lab.tech/privacy.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SubDebt Manager" />
+    <meta property="og:title" content="Privacy Policy — SubDebt Manager" />
+    <meta
+      property="og:description"
+      content="How SubDebt Manager stores financial data on-device, and the limits of its optional network access."
+    />
+    <meta property="og:url" content="https://subdebt.zer0k7lab.tech/privacy.html" />
+    <meta property="og:image" content="https://subdebt.zer0k7lab.tech/assets/img/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy Policy — SubDebt Manager" />
+    <meta
+      name="twitter:description"
+      content="How SubDebt Manager stores financial data on-device, and the limits of its optional network access."
+    />
+    <meta name="twitter:image" content="https://subdebt.zer0k7lab.tech/assets/img/og.png" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="assets/fonts/inter-tight-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <link rel="icon" type="image/png" href="icon.png" />
+    <link
+      rel="preload"
+      href="assets/fonts/jetbrains-mono-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/png" href="assets/img/favicon-64.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        try {
+          var saved = localStorage.getItem("subdebt-theme");
+          var theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          root.dataset.theme = theme;
+        } catch (error) {}
+      })();
+    </script>
   </head>
+
   <body>
-    <header class="shell topbar">
-      <a class="brand" href="index.html" aria-label="SubDebt Manager home">
-        <span class="brand-mark" aria-hidden="true">
-          <img src="icon.png" alt="SubDebt Logo" />
-        </span>
-        <span>SubDebt</span>
-      </a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="index.html#features">Features</a>
-        <a href="index.html#release">What's new</a>
-        <a href="support.html">Support</a>
-        <a class="nav-cta" href="index.html#download">Get the app</a>
-      </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="SubDebt Manager home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/img/mark-128.png" width="128" height="128" alt="" />
+          </span>
+          <span class="brand-name">SubDebt<span class="brand-suffix">/Manager</span></span>
+        </a>
+
+        <div class="header-actions">
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a class="nav-link" href="index.html#features">Features</a>
+            <a class="nav-link" href="index.html#privacy">Privacy</a>
+            <a class="nav-link" href="index.html#tools">Tools</a>
+            <a class="nav-link" href="index.html#faq">FAQ</a>
+            <a class="nav-link" href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a
+              class="btn btn--primary btn--sm nav-cta"
+              href="https://play.google.com/store/apps/details?id=com.subdebt.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="play-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#00D7FE" d="M3.4 2.1 13.1 11.8 3.4 21.5a1.4 1.4 0 0 1-.6-1.1V3.2c0-.4.2-.8.6-1.1Z" />
+                <path fill="#34D399" d="M3.4 2.1c.3-.2.7-.2 1.1 0l10.9 6.2-2.3 2.3-9.7-9.7Z" />
+                <path fill="#FB7185" d="M3.4 21.5c.3.2.7.2 1.1 0l10.9-6.2-2.3-2.3-9.7 9.7Z" />
+                <path fill="#FBBF24" d="m16.6 9.1 3.6 2.1c.8.5.8 1.1 0 1.6l-3.6 2.1-2.5-2.9 2.5-2.9Z" />
+              </svg>
+              Get it on Google Play
+            </a>
+          </nav>
+
+          <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.5" />
+              <path d="M12 2.5v2M12 19.5v2M4.7 4.7l1.4 1.4M17.9 17.9l1.4 1.4M2.5 12h2M19.5 12h2M4.7 19.3l1.4-1.4M17.9 6.1l1.4-1.4" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z" />
+            </svg>
+          </button>
+
+          <button
+            class="icon-btn menu-toggle"
+            type="button"
+            data-nav-toggle
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <section class="doc-shell doc-hero">
-        <div class="eyebrow"><span></span> Legal &amp; Transparency</div>
-        <h1>Privacy Policy</h1>
-        <p class="hero-copy">
-          SubDebt Manager is built on an absolute principle: your personal finances, debts, and subscriptions belong exclusively to you on your physical device.
-        </p>
-        <div class="doc-meta">
-          <span class="doc-badge">Effective Date: October 2, 2026</span>
-          <span>Version 2.14.1</span>
+    <main id="main">
+      <section class="legal-hero">
+        <div class="container">
+          <p class="kicker">Legal / Privacy</p>
+          <h1>Privacy Policy</h1>
+          <p class="hero-copy">
+            SubDebt Manager is built on an absolute principle: your personal finances, debts, and subscriptions belong exclusively to you on your physical device.
+          </p>
+          <div class="legal-meta">
+            <span class="doc-badge">Effective Date: October 2, 2026</span>
+            <span>Version 2.14.1</span>
+          </div>
         </div>
       </section>
 
-      <article class="doc-shell doc-body">
-        <section class="doc-section">
-          <h2>1. Executive Summary</h2>
-          <div class="doc-card highlight">
+      <div class="container legal-layout">
+        <aside class="legal-toc" aria-label="On this page">
+          <p>On this page</p>
+          <nav aria-label="Page sections">
+            <a href="#summary">1. Executive Summary</a>
+            <a href="#collection">2. Collection and storage</a>
+            <a href="#permissions">3. Device permissions</a>
+            <a href="#third-parties">4. Third-party services</a>
+            <a href="#backup">5. Backup and deletion</a>
+            <a href="#children">6. Children's privacy</a>
+            <a href="#updates">7. Policy updates</a>
+            <a href="#contact">8. Developer contact</a>
+          </nav>
+        </aside>
+
+        <article class="legal-body">
+          <section id="summary">
+            <h2>1. Executive Summary</h2>
+            <div class="doc-card highlight">
+              <p>
+                <strong>SubDebt Manager operates 100% offline.</strong> We do not operate user accounts, cloud databases, tracking SDKs, analytics frameworks, advertising networks, or third-party behavioral telemetry. All data entered into the application remains solely on your device.
+              </p>
+            </div>
+          </section>
+
+          <section id="collection">
+            <h2>2. Information Collection and Storage</h2>
             <p>
-              <strong>SubDebt Manager operates 100% offline.</strong> We do not operate user accounts, cloud databases, tracking SDKs, analytics frameworks, advertising networks, or third-party behavioral telemetry. All data entered into the application remains solely on your device.
+              When using SubDebt Manager, you may record sensitive financial data including:
             </p>
-          </div>
-        </section>
+            <ul>
+              <li>Recurring subscription details (service names, billing amounts, renewal cycles, renewal dates).</li>
+              <li>Peer-to-peer debts and loans (borrower/lender names, principal amounts, interest notes, due dates).</li>
+              <li>Daily income, expense, and transaction logs.</li>
+              <li>Receipt photo attachments captured via your camera or selected from your gallery.</li>
+              <li>Custom categories, visual themes, and local currency preferences.</li>
+            </ul>
+            <p>
+              <strong>Storage Location:</strong> All recorded items are stored locally in the application's isolated sandboxed storage (Android AsyncStorage and secure local directories). This information is never transmitted to, inspected by, or stored on external servers owned by us or any third party.
+            </p>
+          </section>
 
-        <section class="doc-section">
-          <h2>2. Information Collection and Storage</h2>
-          <p>
-            When using SubDebt Manager, you may record sensitive financial data including:
-          </p>
-          <ul>
-            <li>Recurring subscription details (service names, billing amounts, renewal cycles, renewal dates).</li>
-            <li>Peer-to-peer debts and loans (borrower/lender names, principal amounts, interest notes, due dates).</li>
-            <li>Daily income, expense, and transaction logs.</li>
-            <li>Receipt photo attachments captured via your camera or selected from your gallery.</li>
-            <li>Custom categories, visual themes, and local currency preferences.</li>
-          </ul>
-          <p>
-            <strong>Storage Location:</strong> All recorded items are stored locally in the application's isolated sandboxed storage (Android AsyncStorage and secure local directories). This information is never transmitted to, inspected by, or stored on external servers owned by us or any third party.
-          </p>
-        </section>
+          <section id="permissions">
+            <h2>3. Device Permissions and Usage</h2>
+            <p>
+              SubDebt Manager requests only the minimal hardware and operating system permissions required for core features:
+            </p>
+            <div class="table-responsive" role="region" aria-label="Device permissions and data handling" tabindex="0">
+              <table class="doc-table">
+                <thead>
+                  <tr>
+                    <th>Permission</th>
+                    <th>Purpose</th>
+                    <th>Data Handling</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>CAMERA</strong></td>
+                    <td>Allows photographing physical receipts and invoices to attach to records.</td>
+                    <td>Executed strictly on demand. Images are stored inside your device's sandboxed storage and never transmitted online.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Photo Picker (SAF)</strong></td>
+                    <td>Allows selecting existing receipt images from your photo gallery.</td>
+                    <td>Uses Android's native system photo picker. The app does not request or require broad storage permissions (READ_EXTERNAL_STORAGE).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>USE_BIOMETRIC / FINGERPRINT</strong></td>
+                    <td>Allows locking and unlocking the app using your device fingerprint or facial recognition.</td>
+                    <td>Authentication occurs entirely within your device's hardware Secure Enclave. The app never accesses or stores your raw biometric data.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>POST_NOTIFICATIONS</strong></td>
+                    <td>Allows delivering local alerts for upcoming subscription renewals and debt repayment due dates.</td>
+                    <td>Scheduled and triggered 100% locally by your device OS. No external push notification servers are involved.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-        <section class="doc-section">
-          <h2>3. Device Permissions and Usage</h2>
-          <p>
-            SubDebt Manager requests only the minimal hardware and operating system permissions required for core features:
-          </p>
-          <div class="table-responsive">
-            <table class="doc-table">
-              <thead>
-                <tr>
-                  <th>Permission</th>
-                  <th>Purpose</th>
-                  <th>Data Handling</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>CAMERA</strong></td>
-                  <td>Allows photographing physical receipts and invoices to attach to records.</td>
-                  <td>Executed strictly on demand. Images are stored inside your device's sandboxed storage and never transmitted online.</td>
-                </tr>
-                <tr>
-                  <td><strong>Photo Picker (SAF)</strong></td>
-                  <td>Allows selecting existing receipt images from your photo gallery.</td>
-                  <td>Uses Android's native system photo picker. The app does not request or require broad storage permissions (READ_EXTERNAL_STORAGE).</td>
-                </tr>
-                <tr>
-                  <td><strong>USE_BIOMETRIC / FINGERPRINT</strong></td>
-                  <td>Allows locking and unlocking the app using your device fingerprint or facial recognition.</td>
-                  <td>Authentication occurs entirely within your device's hardware Secure Enclave. The app never accesses or stores your raw biometric data.</td>
-                </tr>
-                <tr>
-                  <td><strong>POST_NOTIFICATIONS</strong></td>
-                  <td>Allows delivering local alerts for upcoming subscription renewals and debt repayment due dates.</td>
-                  <td>Scheduled and triggered 100% locally by your device OS. No external push notification servers are involved.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+          <section id="third-parties">
+            <h2>4. Third-Party Services and External Links</h2>
+            <p>
+              SubDebt Manager does not bundle analytics trackers, advertising IDs (AAID), or social login SDKs. Interactions with third parties are limited to:
+            </p>
+            <ul>
+              <li>
+                <strong>Exchange Rate API (Optional):</strong> If you choose to convert currencies, the app may query public currency conversion rates via an API. This request transmits only the currency symbols (e.g. USD to EUR) and contains zero personal, financial, or device identifier data.
+              </li>
+              <li>
+                <strong>Direct Cancellation Links:</strong> The Subscription Cancellation assistant provides direct web links to official subscription management portals (e.g., Google Play, Apple, Netflix, Spotify). Clicking these links opens your device's external web browser under the respective service's terms and privacy policies.
+              </li>
+            </ul>
+          </section>
 
-        <section class="doc-section">
-          <h2>4. Third-Party Services and External Links</h2>
-          <p>
-            SubDebt Manager does not bundle analytics trackers, advertising IDs (AAID), or social login SDKs. Interactions with third parties are limited to:
-          </p>
-          <ul>
-            <li>
-              <strong>Exchange Rate API (Optional):</strong> If you choose to convert currencies, the app may query public currency conversion rates via an API. This request transmits only the currency symbols (e.g. USD to EUR) and contains zero personal, financial, or device identifier data.
-            </li>
-            <li>
-              <strong>Direct Cancellation Links:</strong> The Subscription Cancellation assistant provides direct web links to official subscription management portals (e.g., Google Play, Apple, Netflix, Spotify). Clicking these links opens your device's external web browser under the respective service's terms and privacy policies.
-            </li>
-          </ul>
-        </section>
+          <section id="backup">
+            <h2>5. Data Backup, Export, and Deletion</h2>
+            <p>
+              You retain absolute ownership and control over your records at all times:
+            </p>
+            <ul>
+              <li><strong>JSON &amp; CSV Export:</strong> You can export full backups or spreadsheets at any time via Settings &gt; Data Management. Exports use the secure Android system file provider.</li>
+              <li><strong>Complete Data Erasure:</strong> You can wipe all stored records immediately by selecting "Erase All Data" within Settings, or by clearing storage through Android Settings &gt; Apps &gt; SubDebt &gt; Clear Storage.</li>
+              <li><strong>Uninstalling the App:</strong> Because no cloud sync exists, uninstalling the application permanently deletes all local records from your device unless you previously generated an export file.</li>
+            </ul>
+            <p class="subdued">
+              For step-by-step instructions, please visit our <a href="data-deletion.html">Data Deletion Guide</a>.
+            </p>
+          </section>
 
-        <section class="doc-section">
-          <h2>5. Data Backup, Export, and Deletion</h2>
-          <p>
-            You retain absolute ownership and control over your records at all times:
-          </p>
-          <ul>
-            <li><strong>JSON &amp; CSV Export:</strong> You can export full backups or spreadsheets at any time via Settings &gt; Data Management. Exports use the secure Android system file provider.</li>
-            <li><strong>Complete Data Erasure:</strong> You can wipe all stored records immediately by selecting "Erase All Data" within Settings, or by clearing storage through Android Settings &gt; Apps &gt; SubDebt &gt; Clear Storage.</li>
-            <li><strong>Uninstalling the App:</strong> Because no cloud sync exists, uninstalling the application permanently deletes all local records from your device unless you previously generated an export file.</li>
-          </ul>
-          <p class="subdued">
-            For step-by-step instructions, please visit our <a href="data-deletion.html" style="color: var(--lime); text-decoration: underline;">Data Deletion Guide</a>.
-          </p>
-        </section>
+          <section id="children">
+            <h2>6. Children's Privacy</h2>
+            <p>
+              SubDebt Manager does not knowingly collect, solicit, or maintain personal information from children under the age of 13. Since no personal data is collected or transmitted remotely, the application is inherently safe for users of all ages.
+            </p>
+          </section>
 
-        <section class="doc-section">
-          <h2>6. Children's Privacy</h2>
-          <p>
-            SubDebt Manager does not knowingly collect, solicit, or maintain personal information from children under the age of 13. Since no personal data is collected or transmitted remotely, the application is inherently safe for users of all ages.
-          </p>
-        </section>
+          <section id="updates">
+            <h2>7. Updates to This Policy</h2>
+            <p>
+              We may update this Privacy Policy from time to time to reflect changes in functionality or legal standards. Any revisions will be published on this page with an updated effective date. Continued use of the application signifies acceptance of any modifications.
+            </p>
+          </section>
 
-        <section class="doc-section">
-          <h2>7. Updates to This Policy</h2>
-          <p>
-            We may update this Privacy Policy from time to time to reflect changes in functionality or legal standards. Any revisions will be published on this page with an updated effective date. Continued use of the application signifies acceptance of any modifications.
-          </p>
-        </section>
-
-        <section class="doc-section">
-          <h2>8. Developer Contact</h2>
-          <p>
-            If you have questions, feedback, or verification requests regarding this Privacy Policy or the security of SubDebt Manager, please contact:
-          </p>
-          <div class="doc-card">
-            <p><strong>Developer:</strong> Salik Naik</p>
-            <p><strong>Email:</strong> <a href="mailto:zer0k7lab@gmail.com" style="color: var(--lime);">zer0k7lab@gmail.com</a></p>
-            <p><strong>Website:</strong> <a href="https://subdebt.saliknaik.me" style="color: var(--lime);">subdebt.saliknaik.me</a></p>
-            <p><strong>Source Repository:</strong> <a href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noreferrer" style="color: var(--lime);">github.com/zer0k7/SubDebt-Manager</a></p>
-          </div>
-        </section>
-      </article>
+          <section id="contact">
+            <h2>8. Developer Contact</h2>
+            <p>
+              If you have questions, feedback, or verification requests regarding this Privacy Policy or the security of SubDebt Manager, please contact:
+            </p>
+            <div class="doc-card">
+              <p><strong>Developer:</strong> Salik Naik</p>
+              <p><strong>Email:</strong> <a href="mailto:zer0k7lab@gmail.com">zer0k7lab@gmail.com</a></p>
+              <p><strong>Website:</strong> <a href="https://subdebt.saliknaik.me">subdebt.saliknaik.me</a></p>
+              <p><strong>Source Repository:</strong> <a href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noreferrer">github.com/zer0k7/SubDebt-Manager</a></p>
+            </div>
+          </section>
+        </article>
+      </div>
     </main>
 
-    <footer>
-      <div class="shell footer-inner">
-        <span>SubDebt Manager · Open source, offline first.</span>
-        <div class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="data-deletion.html">Data Deletion</a>
-          <a href="support.html">Support</a>
-          <a href="https://github.com/zer0k7/SubDebt-Manager/releases/tag/v2.14.1" target="_blank" rel="noreferrer">Release notes</a>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a class="brand" href="index.html" aria-label="SubDebt Manager home">
+              <span class="brand-mark" aria-hidden="true">
+                <img src="assets/img/mark-128.png" width="128" height="128" alt="" />
+              </span>
+              <span class="brand-name">SubDebt<span class="brand-suffix">/Manager</span></span>
+            </a>
+            <p>
+              Offline finance for Android. Subscriptions, debts, spending, banks
+              and backups in one private ledger.
+            </p>
+            <span class="footer-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              Made in Jammu &amp; Kashmir, India
+            </span>
+          </div>
+
+          <div class="footer-cols">
+            <div class="footer-col">
+              <h2>Product</h2>
+              <a href="index.html#features">Features</a>
+              <a href="index.html#privacy">Privacy model</a>
+              <a href="index.html#tools">Tools</a>
+              <a href="index.html#install">Install</a>
+            </div>
+            <div class="footer-col">
+              <h2>Resources</h2>
+              <a href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/zer0k7/SubDebt-Manager/releases/latest" target="_blank" rel="noopener noreferrer">Releases</a>
+              <a href="support.html">Support</a>
+              <a href="index.html#faq">FAQ</a>
+            </div>
+            <div class="footer-col">
+              <h2>Legal</h2>
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="data-deletion.html">Data deletion</a>
+              <a href="https://zer0k7lab.tech" target="_blank" rel="noopener noreferrer">Zer0k7 Lab</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span data-year>2026</span> Zer0k7 Lab. SubDebt Manager is MIT licensed.</p>
+          <p>
+            <a href="https://subdebt.zer0k7lab.tech">subdebt.zer0k7lab.tech</a>
+            <span aria-hidden="true">·</span>
+            <a href="index.html">Back to home ↑</a>
+          </p>
         </div>
       </div>
     </footer>
+
+    <script src="script.js" defer></script>
   </body>
 </html>

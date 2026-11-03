@@ -24,3 +24,6 @@ build/
 coverage/
 .cache/
 node_modules/
+
+# Raw design inputs and screenshots
+assets/source/
