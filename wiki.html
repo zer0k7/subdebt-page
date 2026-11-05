@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#090D16" />
+
+    <title>User Handbook &amp; Operational Wiki | SubDebt Manager</title>
+    <meta
+      name="description"
+      content="Complete offline handbook, architectural documentation, and usage wiki for SubDebt Manager Android finance app."
+    />
+    <link rel="canonical" href="https://subdebt.zer0k7lab.tech/wiki.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SubDebt Manager" />
+    <meta property="og:title" content="User Handbook &amp; Architecture Wiki — SubDebt Manager" />
+    <meta
+      property="og:description"
+      content="Comprehensive guide to SubDebt's multi-bank ledger, daily spending, bill splitting, debt schedules, SAF vault, and 100% offline privacy architecture."
+    />
+    <meta property="og:url" content="https://subdebt.zer0k7lab.tech/wiki.html" />
+    <meta property="og:image" content="https://subdebt.zer0k7lab.tech/assets/img/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="User Handbook &amp; Architecture Wiki — SubDebt Manager" />
+    <meta
+      name="twitter:description"
+      content="Comprehensive guide to SubDebt's multi-bank ledger, daily spending, bill splitting, debt schedules, SAF vault, and 100% offline privacy architecture."
+    />
+    <meta name="twitter:image" content="https://subdebt.zer0k7lab.tech/assets/img/og.png" />
+
+    <link
+      rel="preload"
+      href="assets/fonts/inter-tight-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/jetbrains-mono-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/png" href="assets/img/favicon-64.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        try {
+          var saved = localStorage.getItem("subdebt-theme");
+          var theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          root.dataset.theme = theme;
+        } catch (error) {}
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="SubDebt Manager home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/img/mark-128.png" width="128" height="128" alt="" />
+          </span>
+          <span class="brand-name">SubDebt<span class="brand-suffix">/Manager</span></span>
+        </a>
+
+        <div class="header-actions">
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a class="nav-link" href="index.html#features">Features</a>
+            <a class="nav-link" href="index.html#privacy">Privacy</a>
+            <a class="nav-link" href="index.html#tools">Tools</a>
+            <a class="nav-link active" href="wiki.html" aria-current="page">Wiki</a>
+            <a class="nav-link" href="support.html">Support</a>
+            <a class="nav-link" href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a
+              class="btn btn--primary btn--sm nav-cta"
+              href="https://play.google.com/store/apps/details?id=com.subdebt.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="play-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#00D7FE" d="M3.4 2.1 13.1 11.8 3.4 21.5a1.4 1.4 0 0 1-.6-1.1V3.2c0-.4.2-.8.6-1.1Z" />
+                <path fill="#34D399" d="M3.4 2.1c.3-.2.7-.2 1.1 0l10.9 6.2-2.3 2.3-9.7-9.7Z" />
+                <path fill="#FB7185" d="M3.4 21.5c.3.2.7.2 1.1 0l10.9-6.2-2.3-2.3-9.7 9.7Z" />
+                <path fill="#FBBF24" d="m16.6 9.1 3.6 2.1c.8.5.8 1.1 0 1.6l-3.6 2.1-2.5-2.9 2.5-2.9Z" />
+              </svg>
+              Get it on Google Play
+            </a>
+          </nav>
+
+          <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.5" />
+              <path d="M12 2.5v2M12 19.5v2M4.7 4.7l1.4 1.4M17.9 17.9l1.4 1.4M2.5 12h2M19.5 12h2M4.7 19.3l1.4-1.4M17.9 6.1l1.4-1.4" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z" />
+            </svg>
+          </button>
+
+          <button
+            class="icon-btn menu-toggle"
+            type="button"
+            data-nav-toggle
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="legal-hero">
+        <div class="container">
+          <p class="kicker">Documentation / Knowledge Base</p>
+          <h1>User Handbook &amp; Wiki</h1>
+          <p class="hero-copy">
+            Complete technical specification and operational manual for SubDebt Manager. Explore liquidity passbooks, bill splitting, hardware security, and offline data vault architectures.
+          </p>
+          <div class="legal-meta">
+            <span class="doc-badge">100% Offline-First Architecture</span>
+            <span class="doc-badge">9 Core Modules</span>
+            <span>Version 2.14.x</span>
+          </div>
+
+          <div class="wiki-search-bar" style="margin-top: 24px; max-width: 540px; position: relative;">
+            <input
+              type="text"
+              id="wiki-search-input"
+              placeholder="Filter chapters, passbooks, SAF vault, bill split..."
+              style="width: 100%; padding: 12px 16px 12px 42px; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--surface); color: var(--text); font-family: var(--font-body); font-size: 14px; outline: none; transition: border-color 0.2s;"
+            />
+            <svg style="position: absolute; left: 14px; top: 13px; width: 18px; height: 18px; stroke: var(--text-3); fill: none; pointer-events: none;" viewBox="0 0 24 24" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <div class="container legal-layout">
+        <aside class="legal-toc" aria-label="On this page">
+          <p>Handbook Chapters</p>
+          <nav aria-label="Wiki chapters" id="wiki-toc-nav">
+            <a href="#ch-1">1. Multi-Bank Accounts</a>
+            <a href="#ch-2">2. Daily Spending &amp; Split</a>
+            <a href="#ch-3">3. Debts &amp; Borrowed</a>
+            <a href="#ch-4">4. Lent Credits &amp; Owed</a>
+            <a href="#ch-5">5. Subscriptions &amp; Cancel</a>
+            <a href="#ch-6">6. Budget Caps &amp; Limits</a>
+            <a href="#ch-7">7. Vault, Security &amp; SAF</a>
+            <a href="#ch-8">8. Notification Engine</a>
+            <a href="#ch-9">9. Tools &amp; Exporters</a>
+          </nav>
+        </aside>
+
+        <article class="legal-body" id="wiki-content">
+          <!-- CHAPTER 1 -->
+          <section id="ch-1" class="wiki-chapter">
+            <p class="kicker" style="color: #0284C7;">Chapter 01 · Liquidity &amp; Banking</p>
+            <h2>Multi-Bank Accounts &amp; Passbook Ledger</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Manage liquid cash reserves across commercial banks, physical cash in hand, and digital wallets with a double-entry transaction passbook.</p>
+            </div>
+
+            <h3>Account Architecture and Types</h3>
+            <p>SubDebt supports four distinct liquidity account structures designed for accurate personal bookkeeping:</p>
+            <div class="table-responsive">
+              <table class="doc-table">
+                <thead>
+                  <tr>
+                    <th>Account Classification</th>
+                    <th>Operational Role</th>
+                    <th>Typical Examples</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Commercial Bank</strong></td>
+                    <td>Primary checking and current accounts with account masking</td>
+                    <td>HDFC, SBI, J&amp;K Bank, Kotak, ICICI</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Digital Wallet</strong></td>
+                    <td>Prepaid balances and mobile payments interfaces</td>
+                    <td>Paytm Wallet, Amazon Pay, Slice</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Cash in Hand</strong></td>
+                    <td>Physical paper currency and coin reserves kept on person</td>
+                    <td>Physical Wallet, Cash Box, Drawer</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Savings &amp; Reserves</strong></td>
+                    <td>Emergency deposits and locked liquidity funds</td>
+                    <td>Fixed Deposit, Sweep Accounts, Emergency Fund</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Transaction Types and Balance Mechanics</h3>
+            <p>Every transaction entry atomically updates account balances based on strict double-entry mathematics:</p>
+            <div class="table-responsive">
+              <table class="doc-table">
+                <thead>
+                  <tr>
+                    <th>Transaction Entry</th>
+                    <th>Mathematical Impact</th>
+                    <th>Passbook Ledger Representation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Money In (Deposit)</strong></td>
+                    <td>Balance = Current Balance + Amount</td>
+                    <td>Represented with emerald green badge and (+) sign</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Money Out (Withdrawal)</strong></td>
+                    <td>Balance = Current Balance - Amount</td>
+                    <td>Represented with coral red badge and (-) sign</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Account Transfer</strong></td>
+                    <td>Source = Source - Amount; Target = Target + Amount</td>
+                    <td>Atomically debits source bank and credits destination bank</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Monthly Cash Flow Ratio Analytics</h3>
+            <p>Passbook and Bank overview screens compute real-time monthly financial flow:</p>
+            <ul>
+              <li><strong>Monthly Inflow:</strong> Total sum of deposits plus incoming transfers received within the active calendar month.</li>
+              <li><strong>Monthly Outflow:</strong> Total sum of withdrawals plus outgoing transfers sent within the active calendar month.</li>
+              <li><strong>Net Cash Flow:</strong> Computed as Inflow minus Outflow. Displays as positive surplus or negative deficit.</li>
+              <li><strong>Segmented Progress Visualizer:</strong> Displays volume proportion of inflow versus outflow with dual-tone progress bars.</li>
+            </ul>
+
+            <h3>Passbook Querying, Range Filters &amp; CSV Export</h3>
+            <ol>
+              <li><strong>Live Query Search:</strong> Enter keywords in the passbook search bar to filter entries by category, payee note, counterparty name, or numeric amount.</li>
+              <li><strong>Date Range Filter:</strong> Filter passbook statements by All Dates, This Month, Last Month, or Last 90 Days with single-tap toggle pills.</li>
+              <li><strong>One-Click CSV / Excel Exporter:</strong> Tap the grid icon in any passbook header to export complete transaction histories into standard RFC 4180 CSV format.</li>
+              <li><strong>Reversible Ledger:</strong> Deleting or editing any transaction dynamically rebalances the account and linked transfer balances.</li>
+            </ol>
+          </section>
+
+          <!-- CHAPTER 2 -->
+          <section id="ch-2" class="wiki-chapter">
+            <p class="kicker" style="color: #10B981;">Chapter 02 · Expense Tracking</p>
+            <h2>Daily Spending, Payment Sources &amp; Bill Splitting</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Log day-to-day purchases, link payments directly to bank accounts, organize custom categories, attach photo receipts, and split bills with friends.</p>
+            </div>
+
+            <h3>Recording Expenses and Payment Source Deduction</h3>
+            <ol>
+              <li>Open the Add Spending modal from the bottom navigation or radial speed-dial action menu.</li>
+              <li>Enter the expenditure title (e.g. Groceries, Fuel, Coffee) and the exact numeric cost.</li>
+              <li>Select the Category. The smart categorizer automatically predicts category assignment based on title keywords.</li>
+              <li><strong>Select Payment Source:</strong> Choose Cash or tap an active Bank Account chip. When a bank account is selected, the application confirms and automatically deducts the amount from your live balance and logs an outward withdrawal in your passbook.</li>
+              <li><strong>Attach Receipt:</strong> Capture a camera photograph or select an image from the native photo picker. Receipts are stored in sandboxed storage.</li>
+              <li>Tap Add Expense to finalize the entry.</li>
+            </ol>
+
+            <h3>Bill Splitting with Automatic Credit Generation</h3>
+            <p>How SubDebt eliminates debt tracking friction when paying group bills:</p>
+            <ul>
+              <li>Enable the <strong>Split Bill With Friends</strong> switch inside the Add Spending form.</li>
+              <li>Add participant names (e.g. Rahul, Sameer, Priya).</li>
+              <li>The application calculates equal shares or allows manual adjustments per person.</li>
+              <li>Your personal share is logged as your actual discretionary expense for budget calculations.</li>
+              <li>For each friend added, the system automatically creates a lent Credit entry in the Owed tab under their name, referencing the expense title and timestamp.</li>
+              <li>If a bank account was selected as payment source, the full total bill is deducted from the bank, while personal and owed shares are compartmentalized accurately.</li>
+            </ul>
+
+            <h3>Receipt Vault Privacy</h3>
+            <p>Receipt images are renamed with cryptographically generated UUID strings, stored inside the sandboxed document directory accessible only to SubDebt, and completely excluded from public device galleries.</p>
+          </section>
+
+          <!-- CHAPTER 3 -->
+          <section id="ch-3" class="wiki-chapter">
+            <p class="kicker" style="color: #EF4444;">Chapter 03 · Liabilities</p>
+            <h2>Debts &amp; Borrowed Liabilities Ledger</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Track interest-free personal debts, borrow obligations, installment repayments, due date schedules, and generate formal settlement vouchers.</p>
+            </div>
+
+            <h3>Recording a Borrowed Debt</h3>
+            <ol>
+              <li>Navigate to the Debts tab and tap <strong>+ Add Debt</strong>.</li>
+              <li>Specify creditor name, borrowed amount, and currency.</li>
+              <li>Provide a clear purpose (e.g. Laptop repair, College semester fee, Rent advance).</li>
+              <li>Select the expected repayment due date and tap Save Debt.</li>
+            </ol>
+
+            <h3>Partial Repayments and Balance Reductions</h3>
+            <ul>
+              <li>Tap on any active debt card to open its detail view and select <strong>Record Partial Payment</strong>.</li>
+              <li>Enter installment amount paid and payment date.</li>
+              <li>SubDebt subtracts payment from total liabilities and displays remaining balance with complete audit timestamps.</li>
+            </ul>
+
+            <h3>Debt Settlement &amp; Executive Voucher Export</h3>
+            <p>When a liability is cleared, tap <strong>Mark as Settled</strong>. The application renders a formal Settlement Voucher containing reference identifiers, timestamps, settlement amounts, and creditor metadata, ready to share as high-contrast receipt images.</p>
+          </section>
+
+          <!-- CHAPTER 4 -->
+          <section id="ch-4" class="wiki-chapter">
+            <p class="kicker" style="color: #3B82F6;">Chapter 04 · Assets &amp; Owed</p>
+            <h2>Lent Credits &amp; Asset Receivables Ledger</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Record money or items lent to others, schedule expected return dates, track partial settlements, and monitor incoming cash receivables.</p>
+            </div>
+
+            <h3>Logging a Lent Credit</h3>
+            <ol>
+              <li>Navigate to the Owed tab and tap <strong>+ Add Credit</strong>.</li>
+              <li>Enter counterparty name, lent amount, currency, and expected return date.</li>
+              <li>Tap Save Credit. The total pending amount is reflected in your active assets total.</li>
+            </ol>
+
+            <h3>Recording Returned Funds and Partial Paybacks</h3>
+            <p>Tap on any active credit card and select <strong>Record Partial Return</strong>. The remaining receivable balance updates dynamically across ledger totals. When fully returned, mark the credit as Complete to archive the entry.</p>
+          </section>
+
+          <!-- CHAPTER 5 -->
+          <section id="ch-5" class="wiki-chapter">
+            <p class="kicker" style="color: #7C3AED;">Chapter 05 · Recurring Bills</p>
+            <h2>Subscriptions &amp; Guided Cancellation</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Monitor recurring service commitments, billing frequencies, trial expiration dates, burn rates, and execute step-by-step subscription cancellations.</p>
+            </div>
+
+            <h3>Subscription Commitment Profiles</h3>
+            <div class="table-responsive">
+              <table class="doc-table">
+                <thead>
+                  <tr>
+                    <th>Billing Frequency</th>
+                    <th>Cycle Calculation</th>
+                    <th>Monthly Normalized Burn Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Weekly</strong></td>
+                    <td>Renews every 7 days from reference date</td>
+                    <td>Amount multiplied by 52 divided by 12</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Monthly</strong></td>
+                    <td>Renews on same day each subsequent month</td>
+                    <td>Full face amount</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quarterly</strong></td>
+                    <td>Renews every 3 months from reference date</td>
+                    <td>Amount divided by 3</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Yearly</strong></td>
+                    <td>Renews on same calendar date each year</td>
+                    <td>Amount divided by 12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Free Trial Safeguards</h3>
+            <p>Enable the Free Trial switch when evaluating software. SubDebt schedules priority notifications 1 day prior and on the expiration day, displaying distinct countdown badges on your dashboard.</p>
+
+            <h3>Guided 1-Tap Cancellation Assistant</h3>
+            <p>Tap any subscription card and select <strong>Cancel Subscription</strong>. SubDebt provides direct links to official cancellation portals (Google Play Subscriptions, Apple App Store, Amazon, Netflix, Spotify, ChatGPT) and pre-fills formal cancellation notice drafts.</p>
+          </section>
+
+          <!-- CHAPTER 6 -->
+          <section id="ch-6" class="wiki-chapter">
+            <p class="kicker" style="color: #D97706;">Chapter 06 · Budget Control</p>
+            <h2>Monthly Budget Caps &amp; Discretionary Limits</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Establish monthly overall spending ceilings and category-specific budget limits with real-time percentage consumption alerts.</p>
+            </div>
+
+            <h3>Global Monthly Budget Ceiling</h3>
+            <p>Set planned discretionary allowance in <strong>Settings &gt; Budget Caps</strong>. The ceiling takes effect across the entire app immediately, rendering real-time consumption progress bars, remaining allowances, and safe daily spend limits.</p>
+
+            <h3>Automated Threshold Notifications</h3>
+            <div class="table-responsive">
+              <table class="doc-table">
+                <thead>
+                  <tr>
+                    <th>Consumption Percentage</th>
+                    <th>Notification Channel</th>
+                    <th>Engine Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>70% Budget Reached</strong></td>
+                    <td>Spending &amp; Budget Channel</td>
+                    <td>Gentle advisory alert informing user that 70% of allowance has been spent</td>
+                  </tr>
+                  <tr>
+                    <td><strong>90% Budget Reached</strong></td>
+                    <td>Spending &amp; Budget Channel</td>
+                    <td>High-priority critical alert warning of imminent cap breach</td>
+                  </tr>
+                  <tr>
+                    <td><strong>100% Limit Exceeded</strong></td>
+                    <td>Spending &amp; Budget Channel</td>
+                    <td>Warning alert indicating that all discretionary funds are exhausted</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- CHAPTER 7 -->
+          <section id="ch-7" class="wiki-chapter">
+            <p class="kicker" style="color: #059669;">Chapter 07 · Security &amp; Backup</p>
+            <h2>Data Vault, Security &amp; Scoped Storage</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Hardware-backed biometric authentication, 100% offline persistence, Storage Access Framework directory syncing, and collision-safe database restore.</p>
+            </div>
+
+            <h3>Offline-First Security Architecture</h3>
+            <ul>
+              <li>Operates with 100% local persistence powered by high-speed MMKV key-value storage.</li>
+              <li>Zero remote databases, zero trackers, zero telemetry servers, and zero cloud accounts.</li>
+              <li>Strict Android Scoped Storage compliance with permissions restricted to CAMERA and INTERNET.</li>
+              <li>Biometric authentication supports hardware-backed Fingerprint recognition, Face ID, and fallback master PIN.</li>
+            </ul>
+
+            <h3>Storage Access Framework (SAF) Vault Backups</h3>
+            <ol>
+              <li>Open <strong>Data Vault</strong> from Settings or Tools menu.</li>
+              <li>Tap <strong>Link Custom Backup Folder</strong> to pick a device directory (e.g. Documents/SubDebtBackups or Google Drive local folder).</li>
+              <li>SubDebt automatically writes scheduled daily offline snapshots and on-demand JSON exports directly into this folder.</li>
+              <li>Embedded Base64 encoding preserves attached receipt photos across device migrations and backups.</li>
+            </ol>
+          </section>
+
+          <!-- CHAPTER 8 -->
+          <section id="ch-8" class="wiki-chapter">
+            <p class="kicker" style="color: #F59E0B;">Chapter 08 · Notifications</p>
+            <h2>Smart Notification Engine &amp; System Channels</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Four native Android notification channels, natural dynamic schedule variance, context-aware financial copy, and instant alarm cancellation.</p>
+            </div>
+
+            <h3>Native Android Notification Channels</h3>
+            <div class="table-responsive">
+              <table class="doc-table">
+                <thead>
+                  <tr>
+                    <th>System Channel Name</th>
+                    <th>Channel Identifier</th>
+                    <th>Importance &amp; Priority</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Debts &amp; Liabilities</strong></td>
+                    <td><code>subdebt_debts</code></td>
+                    <td>High Priority with red LED and vibration alerts</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Subscriptions &amp; Renewals</strong></td>
+                    <td><code>subdebt_subscriptions</code></td>
+                    <td>High Priority for timely bill renewal reminders</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Daily Spending &amp; Budget</strong></td>
+                    <td><code>subdebt_spending</code></td>
+                    <td>Default Priority for allowances and daily check-ins</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bank Accounts &amp; Cash Flow</strong></td>
+                    <td><code>subdebt_accounts</code></td>
+                    <td>Default Priority for liquid reserve balance pulses</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Dynamic Non-Repetitive Scheduling</h3>
+            <p>SubDebt eliminates mechanical robotic alarms with Natural Smart Timing, applying subtle random variance (+/- 15 minutes) and automatically shifting weekend morning alerts to respect rest periods.</p>
+          </section>
+
+          <!-- CHAPTER 9 -->
+          <section id="ch-9" class="wiki-chapter">
+            <p class="kicker" style="color: #6366F1;">Chapter 09 · Utilities</p>
+            <h2>Financial Tools, Statements &amp; PDF Exporters</h2>
+            <div class="doc-card highlight">
+              <p><strong>Module Summary:</strong> Executive PDF statement downloads, EMI loan calculators, CSV data portability, financial calendar audits, and settlement voucher generators.</p>
+            </div>
+
+            <h3>Formal PDF &amp; CSV Exporters</h3>
+            <ul>
+              <li><strong>Spending Statements:</strong> Export customized PDF reports across 7d, 30d, 90d, 1y, or All Time with category breakdowns and daily aggregates.</li>
+              <li><strong>One-Click CSV Export:</strong> Single-tap spreadsheet export for daily spending and bank passbooks compatible with Microsoft Excel, Google Sheets, and LibreOffice.</li>
+              <li><strong>Bank Passbook Statements:</strong> Formal ledger PDFs detailing starting balances, deposits, withdrawals, transfers, and closing balance.</li>
+            </ul>
+
+            <h3>Financial Calculators &amp; Calendars</h3>
+            <ol>
+              <li><strong>EMI Loan Calculator:</strong> Computes monthly installments, total interest payable, and amortization ratios with visual charts.</li>
+              <li><strong>Financial Calendar:</strong> Matrix timeline highlighting scheduled debt repayments and subscription renewal due dates.</li>
+            </ol>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a class="brand" href="index.html" aria-label="SubDebt Manager home">
+              <span class="brand-mark" aria-hidden="true">
+                <img src="assets/img/mark-128.png" width="128" height="128" alt="" />
+              </span>
+              <span class="brand-name">SubDebt<span class="brand-suffix">/Manager</span></span>
+            </a>
+            <p>
+              Offline finance for Android. Subscriptions, debts, spending, banks
+              and backups in one private ledger.
+            </p>
+            <span class="footer-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              Made in Jammu &amp; Kashmir, India
+            </span>
+          </div>
+
+          <div class="footer-cols">
+            <div class="footer-col">
+              <h2>Product</h2>
+              <a href="index.html#features">Features</a>
+              <a href="index.html#privacy">Privacy model</a>
+              <a href="index.html#tools">Tools</a>
+              <a href="index.html#install">Install</a>
+            </div>
+            <div class="footer-col">
+              <h2>Resources</h2>
+              <a href="wiki.html">User Handbook &amp; Wiki</a>
+              <a href="https://github.com/zer0k7/SubDebt-Manager" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/zer0k7/SubDebt-Manager/releases/latest" target="_blank" rel="noopener noreferrer">Releases</a>
+              <a href="support.html">Support</a>
+              <a href="index.html#faq">FAQ</a>
+            </div>
+            <div class="footer-col">
+              <h2>Legal</h2>
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="data-deletion.html">Data deletion</a>
+              <a href="https://zer0k7lab.tech" target="_blank" rel="noopener noreferrer">Zer0k7 Lab</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span data-year>2026</span> Zer0k7 Lab. SubDebt Manager is MIT licensed.</p>
+          <p>
+            <a href="https://subdebt.zer0k7lab.tech">subdebt.zer0k7lab.tech</a>
+            <span aria-hidden="true">·</span>
+            <a href="index.html">Back to home ↑</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var searchInput = document.getElementById("wiki-search-input");
+        var chapters = document.querySelectorAll(".wiki-chapter");
+        if (!searchInput) return;
+
+        searchInput.addEventListener("input", function (e) {
+          var query = e.target.value.trim().toLowerCase();
+          chapters.forEach(function (ch) {
+            if (!query) {
+              ch.style.display = "";
+              return;
+            }
+            var text = ch.innerText.toLowerCase();
+            ch.style.display = text.indexOf(query) !== -1 ? "" : "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
